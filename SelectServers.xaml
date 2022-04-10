@@ -1,0 +1,47 @@
+﻿<Window x:Class="KnToolsHulftJpMon.SelectServers"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KnToolsHulftJpMon"
+        mc:Ignorable="d"
+        Icon="appicon.ico"
+        Title="SelectServers" Height="450" Width="370">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="59*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="192"/>
+            <ColumnDefinition Width="171.333"/>
+        </Grid.ColumnDefinitions>
+
+
+        <GroupBox Header="GroupBox" Grid.Row="1" Grid.Column="0" Margin="10,0.333,10,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="180" Height="377">
+            <StackPanel  Margin="0,0,0,0" >
+                <ListBox ItemsSource="{Binding Path=ServerName}" x:Name="listBox" SelectionMode="Extended" Height="354" Margin="0,0,-0.333,0" >
+                    <ListBox.ItemContainerStyle>
+                        <Style TargetType="ListBoxItem">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="ListBoxItem">
+                                        <!-- <CheckBox Content="{TemplateBinding Content}" /> -->
+                                        <CheckBox Content="{TemplateBinding Content}"
+          IsChecked="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(Selector.IsSelected)}"/>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+
+                    </ListBox.ItemContainerStyle>
+                </ListBox>
+            </StackPanel>
+        </GroupBox>
+
+        <StackPanel Grid.Row="1" Grid.Column="1" Margin="1,0.333,1.333,-0.333" >
+            <Button Content="HulftBook作成" Margin="10,0" Click="Button_Click" HorizontalAlignment="Left" VerticalAlignment="Top" />
+        </StackPanel>
+
+    </Grid>
+</Window>
