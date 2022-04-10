@@ -148,5 +148,11 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\KnToolsHulft\KnToolsHulft\KnToolsHulft.csproj">
+      <Project>{600e3490-fb32-4f51-8998-4aae2bfffd23}</Project>
+      <Name>KnToolsHulft</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
