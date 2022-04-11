@@ -7,20 +7,32 @@
         mc:Ignorable="d"
         Icon="appicon.ico"
         Title="SelectServers" Height="450" Width="370">
-    <Grid>
+
+    <Grid HorizontalAlignment="Left" VerticalAlignment="Top">
         <Grid.RowDefinitions>
-            <RowDefinition Height="3*"/>
-            <RowDefinition Height="59*"/>
+            <RowDefinition Height="37.333"/>
+            <RowDefinition Height="368"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="192"/>
             <ColumnDefinition Width="171.333"/>
         </Grid.ColumnDefinitions>
 
+        <TextBlock FontWeight="Bold" FontSize="12pt" TextWrapping="Wrap" HorizontalAlignment="Left" Text="KnToolsHulftJpMon" VerticalAlignment="Stretch" Margin="10,0,0,0" Height="23" Width="153">
+            <TextBlock.Foreground>
+                <ImageBrush ImageSource="blueberries.jpg" />
+            </TextBlock.Foreground>
+        </TextBlock>
 
-        <GroupBox Header="GroupBox" Grid.Row="1" Grid.Column="0" Margin="10,0.333,10,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="180" Height="377">
+        <GroupBox Header="Serverリスト" Grid.Row="1" Grid.Column="0" Margin="10,0.667,0,-9.667" 
+                  VerticalAlignment="Top" HorizontalAlignment="Left" Width="180" Height="377">
+
+
             <StackPanel  Margin="0,0,0,0" >
                 <ListBox ItemsSource="{Binding Path=ServerName}" x:Name="listBox" SelectionMode="Extended" Height="354" Margin="0,0,-0.333,0" >
+
+
+
                     <ListBox.ItemContainerStyle>
                         <Style TargetType="ListBoxItem">
                             <Setter Property="Template">
@@ -39,8 +51,30 @@
             </StackPanel>
         </GroupBox>
 
-        <StackPanel Grid.Row="1" Grid.Column="1" Margin="1,0.333,1.333,-0.333" >
+        <StackPanel Grid.Column="1" Margin="0,33,0.333,0.333" Grid.RowSpan="2" >
+
+            <!--
             <Button Content="HulftBook作成" Margin="10,0" Click="Button_Click" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            -->
+            <!--
+            <Button Content="HulftBook作成" Margin="10,0" Click="Button_Click" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            -->
+
+            <DockPanel Height="69" LastChildFill="False" Margin="10,40,35.333,0" VerticalAlignment="Center" HorizontalAlignment="Center" Width="126">
+                <DockPanel.Background>
+                    <ImageBrush ImageSource="music.jpg" />
+                </DockPanel.Background>
+
+                <Button Foreground="White" FontWeight="Bold" Click="Button_Click" 
+                         Content="HulftBook作成" Margin="0,26,0,0.333" Width="121" VerticalAlignment="Top" HorizontalAlignment="Left">
+                    <Button.Background>
+                        <ImageBrush ImageSource="blueberries.jpg" />
+                    </Button.Background>
+                </Button>
+
+
+            </DockPanel>
+
         </StackPanel>
 
     </Grid>

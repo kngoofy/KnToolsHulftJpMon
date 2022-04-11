@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KnToolsHulft;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -132,8 +133,27 @@ namespace KnToolsHulftJpMon
             if ((bool)Server2.IsChecked) { list.AddNewServer(Server2.Content.ToString()); }
             if ((bool)Server3.IsChecked) { list.AddNewServer(Server3.Content.ToString()); }
 
-            Debug.WriteLine(list.SeverList);
+            string book = "";
+            foreach (var server in list.SeverList)
+            {
+                book = HulftBookFolder.Text + "\\" + server +".xlsx" ;
 
+                var makeSheet = new CreateNewTemplateBook(book);
+
+                Debug.WriteLine(book);
+            }
+
+            ;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+            var _childWindow = new SelectServers(HulftBookFolder.Text);
+
+            // Show the window
+            //_childWindow.Show();
+            _childWindow.ShowDialog();
         }
     }
 

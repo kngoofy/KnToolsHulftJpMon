@@ -17,7 +17,7 @@ namespace KnToolsHulftJpMon
         /// </summary>
         public Servers()
         {
-            this.SeverList.Add("one");
+            // this.SeverList.Add("one");
         }
 
         public void AddNewServer(string name)
